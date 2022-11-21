@@ -19,11 +19,12 @@ body {
   -webkit-user-select: none;
 }
 
-#buttons {
+/*#buttons {
   position: absolute;
   top: 50%;
   left: 50%;
 }
+
 
 div.button {
   position: absolute;
@@ -67,21 +68,14 @@ div.slider::before, knob[data-index="4"] {
   width: 10em;
   height: 10em;
 }
-
+*/
 #radio-freq{
   width: 500px;
   height: 25px; /* Specified height */
-  background: #d3d3d3; /* Grey background */
+  color: rgb(255, 210, 62);
+  background: #3a00ce; /* Grey background */
   outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
+  opacity: 1; /* Set transparency (for mouse-over effects on hover) */
+  
 }
-.radio-freq::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
-  appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #04AA6D; /* Green background */
-  cursor: pointer; /* Cursor on hover */
-}
+

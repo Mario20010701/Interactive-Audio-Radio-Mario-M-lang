@@ -1,8 +1,8 @@
 const AudioContext = window.AudioContext || window.webkitAudioContext;
 let audioContext = null;
 
-const sounds = ['Drillcommentary.wav', 'Nachrichten 1.wav', 'Nachrichten 2.wav', 'MariosSuite123.mp3', 'Störgeräusch.mp3'];
-const hasLoop = [true, true, true, true];
+const sounds = ['drill.wav', 'Hammer_Breaker_Records.wav', 'Kids_der_Straße.wav', 'radio_deep_techno_station.wav', 'rap_kitchen_talks.wav', 'Spotlight_Jams.wav', 'Wetter.wav', 'WWNews.wav', 'MariosSuite123.mp3', 'drill.wav', 'Hammer_Breaker_Records.wav', 'Kids_der_Straße.wav', 'radio_deep_techno_station.wav', 'rap_kitchen_talks.wav', 'Spotlight_Jams.wav', 'Wetter.wav', 'WWNews.wav', 'MariosSuite123.mp3', 'Störgeräusch.mp3'];
+const hasLoop = [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true];
 const audioBuffers = [];
 const sources = [];
 
@@ -10,6 +10,13 @@ let currentStationIndex = null;
 const radioFreqElem = document.getElementById("radio-freq");
 radioFreqElem.addEventListener('input', onRadioFreq);
 window.addEventListener('click', onClick);
+
+//if (radioFreqOriginal <= 0.5) {
+//  const radioFreqElem = 0.5* radioFreqOriginal
+//}
+//if (radioFreqOriginal => 0.5) {
+//  const radioFreqElem = 0.5* radioFreqOriginal -0.5
+//}
 
 // load audio buffers (samples)
 for (let i = 0; i < sounds.length; i++) {
@@ -96,7 +103,7 @@ function startSound(index) {
   let offset = 0;
 
   if (loop) {
-    offset = time % (buffer.duration / 16);
+    offset = time % (buffer.duration);
   }
 
   source.connect(audioContext.destination);
